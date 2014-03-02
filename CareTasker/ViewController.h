@@ -10,7 +10,7 @@
 #import <Firebase/Firebase.h>
 #import "AccountCreationViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AccountCreationViewController>
 
 @property (nonatomic, strong) IBOutlet UIView *main;
 

@@ -31,9 +31,9 @@
 	// Do any additional setup after loading the view
     [self getTasks :@"jdoe" :@"fsho" :array];
     for (Task *task in array) {
-        NSLog(@"%@", task.name);
+        NSString *taskname = task.name;
+        NSLog(@"%@", taskname);
     }
-    NSLog(@"%d", [array count]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,15 +51,13 @@
     Task *singleTask = [[Task alloc] init];
     [tasksRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSDictionary *taskData = snapshot.value;
-        NSString *username = snapshot.name;
-        
         //if ([taskData isKindOfClass:[NSDictionary class]]) {
             singleTask.name = taskData[@"name"];
             singleTask.dayWeek = taskData[@"day"];
             singleTask.time = taskData[@"time"];
             singleTask.description = taskData[@"details"];
             [array addObject:singleTask];
-        NSLog(@"%d", [array count]);
+            NSLog(@"%d %@", [array count], singleTask.name);
         //}
     }];
 }
@@ -83,7 +81,7 @@
     Task* taskAtCell = [self.tasklist objectAtIndex:indexPath.row];
     NSLog(@"%@", taskAtCell.name);
 
-    cell.textLabel.text = taskAtCell.name;
+    cell.textLabel.text = @"asdf";
     return cell;
 }
 
