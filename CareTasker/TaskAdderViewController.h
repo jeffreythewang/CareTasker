@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dayWeekTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
-
+- (void)addTask:(NSString*) caretakerID :(NSString*) patientID :(NSString*) taskName :(NSString*) tasktime :(NSString*) taskDay :(NSString*) taskDet;
 @property (nonatomic, weak) id <TaskAdderViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;

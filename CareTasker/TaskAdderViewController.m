@@ -67,6 +67,8 @@
     task.dayWeek = self.dayWeekTextField.text;
     task.description = self.descriptionTextView.text;
 
+    [self addTask:@"jdoe" :@"fsho" :task.name :task.time :task.dayWeek :task.description];
+    
     [self.delegate TaskAdderViewControllerDidSave:self];
 }
 
@@ -83,6 +85,16 @@
     if (indexPath.section == 2) {
         [self.dayWeekTextField becomeFirstResponder];
     }
+}
+
+- (void)addTask:(NSString*) caretakerID :(NSString*) patientID :(NSString*) taskName :(NSString*) tasktime :(NSString*) taskDay :(NSString*) taskDet {
+    NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:caretakerID];
+    NSString *newString2 = [newString stringByAppendingString:@"/Patients/"];
+    NSString *newString3 = [newString2 stringByAppendingString:patientID];
+    NSString *newString4 = [newString3 stringByAppendingString:@"tasks"];
+    NSString *newString5 = [newString4 stringByAppendingString:taskName];
+    Firebase* taskRef = [[Firebase alloc] initWithUrl:newString5];
+    [taskRef setValue:@{@"name": taskName, @"time": tasktime, @"day": taskDay, @"details": taskDet}];
 }
 
 /*

@@ -9,13 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Firebase/Firebase.h>
 
-
-@class Task;
-
-@protocol TaskDelegate <NSObject>
-- (void)addTask:(NSString*) caretakerID :(NSString*) patientID :(NSString*) task;
-@end
-
 @interface Task : NSObject
 
 @property (nonatomic, strong) NSString *name;
