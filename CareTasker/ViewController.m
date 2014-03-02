@@ -76,6 +76,20 @@
     [self.password resignFirstResponder];
 }
 
+/*
+-(void)textFieldDidBeginEditing:(UITextField *)sender
+{
+    if ([sender isEqual:mailTf])
+    {
+        //move the main view, so that the keyboard does not hide it.
+        if  (self.view.frame.origin.y >= 0)
+        {
+            [self setViewMovedUp:YES];
+        }
+    }
+}
+*/
+
 // Firebase
 - (BOOL)findUser:(NSString*) userid {
     __block BOOL isUser = NO;
