@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Firebase/Firebase.h>
 
 @interface User : NSObject
+
+@property (nonatomic, strong) IBOutlet UITextField *main;
 
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;

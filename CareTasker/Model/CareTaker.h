@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <Firebase/Firebase.h>
 
 @interface CareTaker : User
 
