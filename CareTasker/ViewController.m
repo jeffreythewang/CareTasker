@@ -36,21 +36,25 @@
     
     // Create a reference to a Firebase location
     Firebase* f = [[Firebase alloc] initWithUrl:CareTaskerNS];
-
-    // Write data to Firebase
-    [f setValue:@"Do you have data? You'll love Firebase."];
+    
+    Firebase* sampleChatRef = [[Firebase alloc] initWithUrl:CareTaskerNS];
+    Firebase* childRef = [sampleChatRef childByAppendingPath:@"users"];
+    Firebase* userRef = [childRef childByAppendingPath:@"jsmith"];
+    [userRef setValue:@{@"fname": @"John", @"lname": @"Smith", @"type": @"Caretaker", @"pass": @"hunter2"}];
     
     // Read data and react to changes
     [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
     }];
     
-    UIView *view = [[UIView alloc] init];
-    [view setBackgroundColor:[UIColor whiteColor]];
+    // Home Page
+    UIView *home = [[UIView alloc] init];
+    [home setBackgroundColor:[UIColor whiteColor]];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     [label setText:@"CareTasker"];
-    [view addSubview:label];
-    self.view = view;
+    [home addSubview:label];
+    self.view = home;
+    
 }
 
 - (void)didReceiveMemoryWarning
