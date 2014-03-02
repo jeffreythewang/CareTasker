@@ -7,7 +7,6 @@
 //
 
 #import "TaskAdderViewController.h"
-#import "Model/Task.h"
 
 @interface TaskAdderViewController ()
 
@@ -57,6 +56,7 @@
 - (IBAction)cancel:(id)sender
 {
     [self.delegate TaskAdderViewControllerDidCancel:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender
@@ -67,9 +67,10 @@
     task.dayWeek = self.dayWeekTextField.text;
     task.description = self.descriptionTextView.text;
 
-    [self addTask:@"jdoe" :@"fsho" :task.name :task.time :task.dayWeek :task.description];
+    [self addTask:@"jdoe" :@"fsho" :task.name :task.time :task.dayWeek :task.description];  
     
     [self.delegate TaskAdderViewControllerDidSave:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

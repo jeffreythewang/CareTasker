@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
+#import "Model/User.h"
 
 @class AccountCreationViewController;
 
@@ -17,7 +19,15 @@
 
 @interface AccountCreationViewController : UITableViewController
 
+- (void)addUser:(NSString*) userid :(NSString*) firstName :(NSString*) lastName :(NSString*) email :(NSString*) type :(NSString*) npassword;
+- (void)createGroup:(NSString*) userid;
+
 @property (nonatomic, weak) id <AccountCreationViewController> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *fNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

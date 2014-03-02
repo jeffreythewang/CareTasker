@@ -32,6 +32,20 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+// text field stuff
+-(void)dismissKeyboard {
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+    [self.fNameTextField resignFirstResponder];
+    [self.lNameTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,15 +54,45 @@
     // Dispose of any resources that can be recreated.
 }
 
+// What to do on cancel and done
 - (IBAction)cancel:(id)sender
 {
     [self.delegate accountCreationViewControllerDidCancel:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)done:(id)sender
 {
+    User *user = [[User alloc] init];
+    user.username = self.usernameTextField.text;
+    user.password = self.passwordTextField.text;
+    user.email = self.emailTextField.text;
+    user.firstName = self.fNameTextField.text;
+    user.lastName = self.lNameTextField.text;
+    
+    //[self addUser:user.username :user.password :user.firstName :user.lastName :user.email :@"Caretaker" : user.password];
+    
     [self.delegate accountCreationViewControllerDidSave:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)addUser:(NSString*) userid :(NSString*) firstName :(NSString*) lastName :(NSString*) email :(NSString*) type :(NSString*) npassword {
+    NSString *newString = [@"https://caretasker.firebaseio.com/users/" stringByAppendingString:userid];
+    Firebase* userRef = [[Firebase alloc] initWithUrl:newString];
+    [userRef setValue:@{@"fname": firstName, @"lname": lastName, @"email": email, @"type": type, @"pass": npassword}];
+    if ([type isEqualToString: @"Caretaker"])
+        [self createGroup:userid];
+}
+
+// Called by addUser if the user is a Caretaker, it creates a Caretaker's group
+- (void)createGroup:(NSString*) userid {
+    NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:userid];
+    NSString *newString2 = [newString stringByAppendingString:@"/Caretaker/"];
+    Firebase* groupRef = [[Firebase alloc] initWithUrl:newString2];
+    [groupRef setValue:@{@"caretakerID": userid}];
+}
+
+//
 
 /*
 // Override to support conditional editing of the table view.

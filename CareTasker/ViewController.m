@@ -60,10 +60,6 @@
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
     }];
     
-    [self addUser:@"jdoe" :@"John" :@"Doe" :@"jdoe@gmail.com" :@"Caretaker" :@"qwerty"];
-    [self addUser:@"fsho" :@"Fenix" :@"Sho" :@"fsho@gmail.com" :@"Patient" :@"wasd"];
-    [self addToGroup:@"jdoe" :@"fsho" :@"Patient"];
-    
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
                                            initWithTarget:self
                                            action:@selector(dismissKeyboard)];
@@ -93,6 +89,27 @@
 
 //Account creation stuff
 
+#pragma mark - AccountCreationViewControllerDelegate
+
+- (void)AccountCreationViewControllerDidCancel:(AccountCreationViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)AccountCreationViewControllerDidSave:(AccountCreationViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddPlayer"]) {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        AccountCreationViewController *AccountCreationViewController = [navigationController viewControllers][0];
+        AccountCreationViewController.delegate = self;
+    }
+}
 
 // Firebase
 - (BOOL)findUser:(NSString *) userid {
@@ -113,14 +130,6 @@
         }
     }];
     return isUser;
-}
-
-- (void)addUser:(NSString*) userid :(NSString*) firstName :(NSString*) lastName :(NSString*) email :(NSString*) type :(NSString*) npassword {
-    NSString *newString = [@"https://caretasker.firebaseio.com/users/" stringByAppendingString:userid];
-    Firebase* userRef = [[Firebase alloc] initWithUrl:newString];
-    [userRef setValue:@{@"fname": firstName, @"lname": lastName, @"email": email, @"type": type, @"pass": npassword}];
-    if ([type isEqualToString: @"Caretaker"])
-        [self createGroup:userid];
 }
 
 // Function to login an existing user
@@ -163,13 +172,7 @@
     }
 }
 
-// Called by addUser if the user is a Caretaker, it creates a Caretaker's group
-- (void)createGroup:(NSString*) userid {
-    NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:userid];
-    NSString *newString2 = [newString stringByAppendingString:@"/Caretaker/"];
-    Firebase* groupRef = [[Firebase alloc] initWithUrl:newString2];
-    [groupRef setValue:@{@"caretakerID": userid}];
-}
+
 
 - (void)didReceiveMemoryWarning
 {

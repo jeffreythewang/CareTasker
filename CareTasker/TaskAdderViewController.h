@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model/Task.h"
 
 @class TaskAdderViewController;
 
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dayWeekTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+
+@property (nonatomic, strong) Task *belongsTo;
 
 - (void)addTask:(NSString*) caretakerID :(NSString*) patientID :(NSString*) taskName :(NSString*) tasktime :(NSString*) taskDay :(NSString*) taskDet;
 @property (nonatomic, weak) id <TaskAdderViewControllerDelegate> delegate;

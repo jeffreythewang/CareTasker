@@ -7,9 +7,10 @@
 //
 
 #import "User.h"
+#import "CareTaker.h"
 
 @interface Patient : User
 
-
+@property (nonatomic, strong) CareTaker *belongsTo;
 
 @end
