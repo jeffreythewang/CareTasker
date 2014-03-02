@@ -19,6 +19,18 @@
 		00980AA218C2D40E0080D3F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00980A8A18C2D40E0080D3F2 /* UIKit.framework */; };
 		00980AAA18C2D40E0080D3F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00980AA818C2D40E0080D3F2 /* InfoPlist.strings */; };
 		00980AAC18C2D40E0080D3F2 /* CareTaskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00980AAB18C2D40E0080D3F2 /* CareTaskerTests.m */; };
+		00D36E2B18C2DE2900B4DF55 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E2A18C2DE2900B4DF55 /* Firebase.framework */; };
+		00D36E2D18C2DE5500B4DF55 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E2C18C2DE5500B4DF55 /* libc++.dylib */; };
+		00D36E2F18C2DE6600B4DF55 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E2E18C2DE6600B4DF55 /* libicucore.dylib */; };
+		00D36E3118C2DE6E00B4DF55 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E3018C2DE6E00B4DF55 /* CFNetwork.framework */; };
+		00D36E3318C2DE7500B4DF55 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E3218C2DE7500B4DF55 /* Security.framework */; };
+		00D36E3518C2DE7B00B4DF55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D36E3418C2DE7B00B4DF55 /* SystemConfiguration.framework */; };
+		00D36E3818C2DEF500B4DF55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E3718C2DEF500B4DF55 /* ViewController.m */; };
+		00D36E4218C2DF1B00B4DF55 /* CareTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E3B18C2DF1B00B4DF55 /* CareTaker.m */; };
+		00D36E4318C2DF1B00B4DF55 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E3D18C2DF1B00B4DF55 /* Patient.m */; };
+		00D36E4418C2DF1B00B4DF55 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E3F18C2DF1B00B4DF55 /* Task.m */; };
+		00D36E4518C2DF1B00B4DF55 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E4118C2DF1B00B4DF55 /* User.m */; };
+		00D36E4718C2E0E700B4DF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D36E4618C2E0E700B4DF55 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +60,23 @@
 		00980AA718C2D40E0080D3F2 /* CareTaskerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CareTaskerTests-Info.plist"; sourceTree = "<group>"; };
 		00980AA918C2D40E0080D3F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00980AAB18C2D40E0080D3F2 /* CareTaskerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CareTaskerTests.m; sourceTree = "<group>"; };
+		00D36E2A18C2DE2900B4DF55 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		00D36E2C18C2DE5500B4DF55 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		00D36E2E18C2DE6600B4DF55 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		00D36E3018C2DE6E00B4DF55 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		00D36E3218C2DE7500B4DF55 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		00D36E3418C2DE7B00B4DF55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		00D36E3618C2DEF500B4DF55 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		00D36E3718C2DEF500B4DF55 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00D36E3A18C2DF1B00B4DF55 /* CareTaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CareTaker.h; sourceTree = "<group>"; };
+		00D36E3B18C2DF1B00B4DF55 /* CareTaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CareTaker.m; sourceTree = "<group>"; };
+		00D36E3C18C2DF1B00B4DF55 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		00D36E3D18C2DF1B00B4DF55 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		00D36E3E18C2DF1B00B4DF55 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		00D36E3F18C2DF1B00B4DF55 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		00D36E4018C2DF1B00B4DF55 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		00D36E4118C2DF1B00B4DF55 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		00D36E4618C2E0E700B4DF55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +84,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D36E3518C2DE7B00B4DF55 /* SystemConfiguration.framework in Frameworks */,
+				00D36E3318C2DE7500B4DF55 /* Security.framework in Frameworks */,
+				00D36E3118C2DE6E00B4DF55 /* CFNetwork.framework in Frameworks */,
+				00D36E2F18C2DE6600B4DF55 /* libicucore.dylib in Frameworks */,
+				00D36E2D18C2DE5500B4DF55 /* libc++.dylib in Frameworks */,
 				00980A8918C2D40E0080D3F2 /* CoreGraphics.framework in Frameworks */,
 				00980A8B18C2D40E0080D3F2 /* UIKit.framework in Frameworks */,
 				00980A8718C2D40E0080D3F2 /* Foundation.framework in Frameworks */,
+				00D36E2B18C2DE2900B4DF55 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +131,12 @@
 		00980A8518C2D40E0080D3F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00D36E3418C2DE7B00B4DF55 /* SystemConfiguration.framework */,
+				00D36E3218C2DE7500B4DF55 /* Security.framework */,
+				00D36E3018C2DE6E00B4DF55 /* CFNetwork.framework */,
+				00D36E2E18C2DE6600B4DF55 /* libicucore.dylib */,
+				00D36E2C18C2DE5500B4DF55 /* libc++.dylib */,
+				00D36E2A18C2DE2900B4DF55 /* Firebase.framework */,
 				00980A8618C2D40E0080D3F2 /* Foundation.framework */,
 				00980A8818C2D40E0080D3F2 /* CoreGraphics.framework */,
 				00980A8A18C2D40E0080D3F2 /* UIKit.framework */,
@@ -107,10 +148,14 @@
 		00980A8C18C2D40E0080D3F2 /* CareTasker */ = {
 			isa = PBXGroup;
 			children = (
+				00D36E3918C2DF1B00B4DF55 /* Model */,
 				00980A9518C2D40E0080D3F2 /* AppDelegate.h */,
 				00980A9618C2D40E0080D3F2 /* AppDelegate.m */,
 				00980A9818C2D40E0080D3F2 /* Images.xcassets */,
 				00980A8D18C2D40E0080D3F2 /* Supporting Files */,
+				00D36E3618C2DEF500B4DF55 /* ViewController.h */,
+				00D36E3718C2DEF500B4DF55 /* ViewController.m */,
+				00D36E4618C2E0E700B4DF55 /* Main.storyboard */,
 			);
 			path = CareTasker;
 			sourceTree = "<group>";
@@ -142,6 +187,21 @@
 				00980AA818C2D40E0080D3F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00D36E3918C2DF1B00B4DF55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00D36E3A18C2DF1B00B4DF55 /* CareTaker.h */,
+				00D36E3B18C2DF1B00B4DF55 /* CareTaker.m */,
+				00D36E3C18C2DF1B00B4DF55 /* Patient.h */,
+				00D36E3D18C2DF1B00B4DF55 /* Patient.m */,
+				00D36E3E18C2DF1B00B4DF55 /* Task.h */,
+				00D36E3F18C2DF1B00B4DF55 /* Task.m */,
+				00D36E4018C2DF1B00B4DF55 /* User.h */,
+				00D36E4118C2DF1B00B4DF55 /* User.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D36E4718C2E0E700B4DF55 /* Main.storyboard in Resources */,
 				00980A9118C2D40E0080D3F2 /* InfoPlist.strings in Resources */,
 				00980A9918C2D40E0080D3F2 /* Images.xcassets in Resources */,
 			);
@@ -239,7 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D36E4218C2DF1B00B4DF55 /* CareTaker.m in Sources */,
+				00D36E4518C2DF1B00B4DF55 /* User.m in Sources */,
+				00D36E3818C2DEF500B4DF55 /* ViewController.m in Sources */,
+				00D36E4318C2DF1B00B4DF55 /* Patient.m in Sources */,
 				00980A9718C2D40E0080D3F2 /* AppDelegate.m in Sources */,
+				00D36E4418C2DF1B00B4DF55 /* Task.m in Sources */,
 				00980A9318C2D40E0080D3F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,9 +425,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Jeffrey/Documents/Code/CareTasker,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CareTasker/CareTasker-Prefix.pch";
 				INFOPLIST_FILE = "CareTasker/CareTasker-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -372,9 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Jeffrey/Documents/Code/CareTasker,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CareTasker/CareTasker-Prefix.pch";
 				INFOPLIST_FILE = "CareTasker/CareTasker-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -441,6 +517,7 @@
 				00980AB118C2D40E0080D3F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00980AB218C2D40E0080D3F2 /* Build configuration list for PBXNativeTarget "CareTaskerTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +526,7 @@
 				00980AB418C2D40E0080D3F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
