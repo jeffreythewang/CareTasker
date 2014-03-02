@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AccountCreationViewController.h"
 
 #define CareTaskerNS @"https://caretasker.firebaseio.com/"
 
@@ -90,20 +91,24 @@
 }
 */
 
+//Account creation stuff
+
+
 // Firebase
-- (BOOL)findUser:(NSString*) userid {
+- (BOOL)findUser:(NSString *) userid {
+    // Default to false
     __block BOOL isUser = NO;
     NSString *newString = [@"https://caretasker.firebaseio.com/users/"  stringByAppendingString:userid];
     Firebase* userfindRef = [[Firebase alloc] initWithUrl:newString];
     [userfindRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        if(snapshot.value == [NSNull null]) {
+        if(snapshot.name == [NSNull null]) {
             NSLog(@"User %@ does not exist", userid);
-            // return NO;
         } else {
-            NSString* firstName = snapshot.value[@"fname"];
-            NSString* lastName = snapshot.value[@"lname"];
+            NSDictionary* userData = snapshot.value;
+            NSString* firstName = userData[@"fname"];
+            NSString* lastName = userData[@"lname"];
             NSLog(@"User's name is: %@ %@", firstName, lastName);
-            // return YES;
+            // Sets to YES if the user was found
             isUser = YES;
         }
     }];
@@ -119,24 +124,29 @@
 }
 
 // Function to login an existing user
-- (void)loginUser:(NSString*) user :(NSString*) npassword {
-    
-    if (![self findUser:user]) {
-        NSString *newString = [@"https://caretasker.firebaseio.com/users/" stringByAppendingString:user];
-        NSString *newString2 = [newString stringByAppendingString:@"/"];
-        NSString *newString3 = [newString2 stringByAppendingString:@"pass"];
-        Firebase* loginRef = [[Firebase alloc] initWithUrl:newString3];
+- (void)loginUser:(NSString*) userid :(NSString*) npassword {
+    if (![self findUser:userid]) {
+        NSString *newString = [@"https://caretasker.firebaseio.com/users/" stringByAppendingString:userid];
+        Firebase* loginRef = [[Firebase alloc] initWithUrl:newString];
         [loginRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            if(snapshot.value == npassword) {
-                // Move to next screeen
+            NSDictionary* userData = snapshot.value;
+            if([userData[@"pass"] isEqualToString:npassword]) {
+                if([userData[@"type"] isEqualToString:@"Caretaker"]) {
+                    // Move to Caretaker screen
+                }
+                else {
+                    // Move to Patient screen
+                }
             }
             else {
                 // Popup dialog saying that password was incorrect
+                NSLog(@"Password was incorrect.");
             }
         }];
     }
     else {
         // Popup dialog saying that username could not be found
+        NSLog(@"Username was incorrect.");
     }
 }
 

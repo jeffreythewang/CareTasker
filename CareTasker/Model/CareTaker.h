@@ -11,6 +11,4 @@
 
 @interface CareTaker : User
 
-
-
 @end

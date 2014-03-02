@@ -33,6 +33,7 @@
 		00D36E4718C2E0E700B4DF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D36E4618C2E0E700B4DF55 /* Main.storyboard */; };
 		00FBBE5418C33E4900DB901E /* TaskAdderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */; };
 		00FBBE5718C348AF00DB901E /* CareTakerPatientSpecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */; };
+		00FBBE6018C37C1D00DB901E /* AccountCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBE5F18C37C1D00DB901E /* AccountCreationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAdderViewController.m; sourceTree = "<group>"; };
 		00FBBE5518C348AF00DB901E /* CareTakerPatientSpecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CareTakerPatientSpecViewController.h; sourceTree = "<group>"; };
 		00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CareTakerPatientSpecViewController.m; sourceTree = "<group>"; };
+		00FBBE5E18C37C1D00DB901E /* AccountCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCreationViewController.h; sourceTree = "<group>"; };
+		00FBBE5F18C37C1D00DB901E /* AccountCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCreationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */,
 				00FBBE5518C348AF00DB901E /* CareTakerPatientSpecViewController.h */,
 				00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */,
+				00FBBE5E18C37C1D00DB901E /* AccountCreationViewController.h */,
+				00FBBE5F18C37C1D00DB901E /* AccountCreationViewController.m */,
 			);
 			path = CareTasker;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				00D36E3818C2DEF500B4DF55 /* ViewController.m in Sources */,
 				00D36E4318C2DF1B00B4DF55 /* Patient.m in Sources */,
 				00980A9718C2D40E0080D3F2 /* AppDelegate.m in Sources */,
+				00FBBE6018C37C1D00DB901E /* AccountCreationViewController.m in Sources */,
 				00FBBE5718C348AF00DB901E /* CareTakerPatientSpecViewController.m in Sources */,
 				00D36E4418C2DF1B00B4DF55 /* Task.m in Sources */,
 				00FBBE5418C33E4900DB901E /* TaskAdderViewController.m in Sources */,

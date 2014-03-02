@@ -7,18 +7,36 @@
 //
 
 #import "CareTaker.h"
+#include "User.h"
 
 @implementation CareTaker
 
-- (void)getPatients:(NSString*) caretakerID {
-    NSMutableArray* patients = [[NSMutableArray alloc] init];
+- (NSMutableArray*)getPatients:(NSString*) caretakerID {
+    NSMutableArray* patientIds = [[NSMutableArray alloc] init];
     NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:caretakerID];
     NSString *newString2 = [newString stringByAppendingString:@"/Patients/"];
     Firebase* patientsRef = [[Firebase alloc] initWithUrl:newString2];
     [patientsRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        //NSDictionary* msgData = snapshot.value;
-        [patients addObject:snapshot.value];
+        NSDictionary* patData = snapshot.value;
+        [patientIds addObject:patData[@"patientID"]];
     }];
+    NSMutableArray* patients = [[NSMutableArray alloc] init];
+    User *singlePatient = [[User alloc] init];
+    for (id userid in patientIds) {
+        NSString *newString3 = @"https://caretasker.firebaseio.com/users";
+        Firebase* patientRef = [[Firebase alloc] initWithUrl:newString3];
+        [patientRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+            NSString* username = snapshot.name;
+            if ([username isEqualToString:userid]) {
+                NSDictionary* patientData = snapshot.value;
+                singlePatient.username = username;
+                singlePatient.firstName = patientData[@"fname"];
+                singlePatient.lastName = patientData[@"lname"];
+                [patients addObject:singlePatient];
+            }
+        }];
+    }
+    return patients;
 }
 
 // A Caretaker can use this function to add

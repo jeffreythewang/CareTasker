@@ -58,7 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q3H-CA-yzA" kind="modal" id="neB-5E-Pov"/>
+                                    <segue destination="HhK-F0-mJ5" kind="modal" id="Fy2-0I-98m"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,6 +73,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6h5-Mj-kTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-985" y="-472"/>
+        </scene>
+        <!--Account Creation View Controller - Create Account-->
+        <scene sceneID="cPi-xP-JT0">
+            <objects>
+                <tableViewController id="BGa-YH-jWG" customClass="AccountCreationViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lWh-MR-oyU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cAm-gM-4TR">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAm-gM-4TR" id="kcf-lW-SbQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Create Account" id="X30-t0-q64">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="zEU-3j-Igl">
+                            <connections>
+                                <action selector="cancel:" destination="BGa-YH-jWG" id="aCX-ZP-PiG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="foW-Hr-dA2">
+                            <connections>
+                                <action selector="done:" destination="BGa-YH-jWG" id="I9G-JN-VaK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMn-yV-ZYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="47"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8fD-e5-Sqe">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="HhK-F0-mJ5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UM5-IA-SYj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BGa-YH-jWG" kind="relationship" relationship="rootViewController" id="C0S-Ti-8df"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evp-b8-m5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="47"/>
         </scene>
         <!--CareTaker's View of Specific Patient-->
         <scene sceneID="qj1-fW-emb">
@@ -112,59 +163,6 @@
             </objects>
             <point key="canvasLocation" x="-219" y="-907"/>
         </scene>
-        <!--Account Creation-->
-        <scene sceneID="inV-IS-2Pg">
-            <objects>
-                <viewController id="Q3H-CA-yzA" userLabel="Account Creation" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5OW-oE-p29"/>
-                        <viewControllerLayoutGuide type="bottom" id="bPp-h4-w58"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="krE-ib-6yq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHv-mv-phd">
-                                <rect key="frame" x="20" y="157" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="db7-ON-RAc">
-                                <rect key="frame" x="20" y="213" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-g4-Z4s">
-                                <rect key="frame" x="20" y="269" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-gf-yKj">
-                                <rect key="frame" x="20" y="326" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rsu-TR-ExG">
-                                <rect key="frame" x="20" y="408" width="280" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Caretaker"/>
-                                    <segment title="Patient"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yXU-OU-lKw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OoL-R1-8jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-533" y="270"/>
-        </scene>
         <!--CareTaker List of Patients-->
         <scene sceneID="cA9-Kv-M08">
             <objects>
@@ -199,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mz-Yg-Uzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-82"/>
+            <point key="canvasLocation" x="551" y="47"/>
         </scene>
         <!--Task Adder View Controller - Add Task-->
         <scene sceneID="nUU-9S-QOg">
