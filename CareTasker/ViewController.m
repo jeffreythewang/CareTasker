@@ -63,37 +63,17 @@
     [self addUser:@"fsho" :@"Fenix" :@"Sho" :@"fsho@gmail.com" :@"Patient" :@"wasd"];
     [self addToGroup:@"jdoe" :@"fsho" :@"Patient"];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
-    [singleTap setNumberOfTapsRequired:1];
-    [singleTap setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:singleTap];
-    //[singleTap release];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 // text field stuff
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
-}
-
-
-//Implement the below delegate method:
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.username = textField;
-}
-
-//Implement resignOnTap:
-
-- (void)resignOnTap:(UITextField *)iSender {
+-(void)dismissKeyboard {
     [self.username resignFirstResponder];
-}
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-    if ([self.username isFirstResponder]) {
-        [self.username resignFirstResponder];
-    }
+    [self.password resignFirstResponder];
 }
 
 // Firebase

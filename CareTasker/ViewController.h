@@ -12,7 +12,8 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIView *main;
-@property (nonatomic, strong) IBOutlet UITextField *username;
-@property (nonatomic, strong) IBOutlet UITextField *password;
+
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 @end

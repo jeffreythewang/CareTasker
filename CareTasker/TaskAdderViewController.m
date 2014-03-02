@@ -7,6 +7,7 @@
 //
 
 #import "TaskAdderViewController.h"
+#import "Model/Task.h"
 
 @interface TaskAdderViewController ()
 
@@ -32,38 +33,25 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+-(void)dismissKeyboard {
+    [self.nameTextField resignFirstResponder];
+    [self.timeTextField resignFirstResponder];
+    [self.dayWeekTextField resignFirstResponder];
+    [self.descriptionTextView resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
 }
 
 - (IBAction)cancel:(id)sender
@@ -73,7 +61,28 @@
 
 - (IBAction)done:(id)sender
 {
+    Task *task = [[Task alloc] init];
+    task.name = self.nameTextField.text;
+    task.time = self.timeTextField.text;
+    task.dayWeek = self.dayWeekTextField.text;
+    task.description = self.descriptionTextView.text;
+
     [self.delegate TaskAdderViewControllerDidSave:self];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        [self.nameTextField becomeFirstResponder];
+    }
+    
+    if (indexPath.section == 1) {
+        [self.timeTextField becomeFirstResponder];
+    }
+    
+    if (indexPath.section == 2) {
+        [self.dayWeekTextField becomeFirstResponder];
+    }
 }
 
 /*

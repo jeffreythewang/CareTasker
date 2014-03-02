@@ -17,6 +17,12 @@
 
 @interface TaskAdderViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *timeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dayWeekTextField;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+
+
 @property (nonatomic, weak) id <TaskAdderViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;

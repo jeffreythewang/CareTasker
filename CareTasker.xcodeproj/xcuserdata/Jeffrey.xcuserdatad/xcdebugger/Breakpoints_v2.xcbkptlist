@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CareTasker/ViewController.m"
-            timestampString = "415446480.774141"
+            timestampString = "415460254.562885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-findUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,58 +57,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CareTasker/ViewController.h"
-            timestampString = "415438476.291286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "username"
-            landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController username]"
-                  moduleName = "CareTasker"
-                  urlString = "file://localhost/Users/Jeffrey/Documents/Code/CareTasker/CareTasker/ViewController.h"
-                  timestampString = "415440465.935206"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ViewController setUsername:]"
-                  moduleName = "CareTasker"
-                  urlString = "file://localhost/Users/Jeffrey/Documents/Code/CareTasker/CareTasker/ViewController.h"
-                  timestampString = "415440465.936145"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CareTasker/ViewController.m"
-            timestampString = "415446480.774141"
+            timestampString = "415460254.562885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-findUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CareTasker/TaskAdderViewController.m"
-            timestampString = "415451001.718362"
+            timestampString = "415457763.579839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "@implementation TaskAdderViewController"
             landmarkType = "3">
          </BreakpointContent>
