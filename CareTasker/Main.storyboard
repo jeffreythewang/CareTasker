@@ -75,7 +75,7 @@
         <!--CareTaker's View of Specific Patient-->
         <scene sceneID="qj1-fW-emb">
             <objects>
-                <viewController id="C73-eL-JIX" userLabel="CareTaker's View of Specific Patient" sceneMemberID="viewController">
+                <viewController id="C73-eL-JIX" userLabel="CareTaker's View of Specific Patient" customClass="CareTakerPatientSpecViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hLv-du-mk0"/>
                         <viewControllerLayoutGuide type="bottom" id="aI1-5e-w7W"/>
@@ -96,7 +96,7 @@
                                     <navigationItem title="&lt;Name>" id="0R9-eo-QXL">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vNr-2q-Ag1">
                                             <connections>
-                                                <segue destination="5LD-kD-qHM" kind="modal" id="mRE-lH-IOu"/>
+                                                <segue destination="5LD-kD-qHM" kind="modal" identifier="AddTask" id="mRE-lH-IOu"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -199,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="-55" y="-82"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Task Adder View Controller - Add Task-->
         <scene sceneID="nUU-9S-QOg">
             <objects>
-                <tableViewController id="1AG-rr-Qqx" sceneMemberID="viewController">
+                <tableViewController id="1AG-rr-Qqx" customClass="TaskAdderViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="U6f-3t-zvD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,7 +218,18 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="pxo-wX-rX8"/>
+                    <navigationItem key="navigationItem" title="Add Task" id="pxo-wX-rX8">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="z7h-No-kJx">
+                            <connections>
+                                <action selector="cancel:" destination="1AG-rr-Qqx" id="73h-oc-fM3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="RYl-bX-LBp">
+                            <connections>
+                                <action selector="done:" destination="1AG-rr-Qqx" id="3FB-nm-jVH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nx-uu-7dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

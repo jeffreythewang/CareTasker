@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *dayWeek;
 @property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSDate *date;
 
 @end

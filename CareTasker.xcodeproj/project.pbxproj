@@ -31,6 +31,8 @@
 		00D36E4418C2DF1B00B4DF55 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E3F18C2DF1B00B4DF55 /* Task.m */; };
 		00D36E4518C2DF1B00B4DF55 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D36E4118C2DF1B00B4DF55 /* User.m */; };
 		00D36E4718C2E0E700B4DF55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D36E4618C2E0E700B4DF55 /* Main.storyboard */; };
+		00FBBE5418C33E4900DB901E /* TaskAdderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */; };
+		00FBBE5718C348AF00DB901E /* CareTakerPatientSpecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		00D36E4018C2DF1B00B4DF55 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		00D36E4118C2DF1B00B4DF55 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		00D36E4618C2E0E700B4DF55 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		00FBBE5218C33E4900DB901E /* TaskAdderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskAdderViewController.h; sourceTree = "<group>"; };
+		00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskAdderViewController.m; sourceTree = "<group>"; };
+		00FBBE5518C348AF00DB901E /* CareTakerPatientSpecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CareTakerPatientSpecViewController.h; sourceTree = "<group>"; };
+		00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CareTakerPatientSpecViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,10 @@
 				00D36E3618C2DEF500B4DF55 /* ViewController.h */,
 				00D36E3718C2DEF500B4DF55 /* ViewController.m */,
 				00D36E4618C2E0E700B4DF55 /* Main.storyboard */,
+				00FBBE5218C33E4900DB901E /* TaskAdderViewController.h */,
+				00FBBE5318C33E4900DB901E /* TaskAdderViewController.m */,
+				00FBBE5518C348AF00DB901E /* CareTakerPatientSpecViewController.h */,
+				00FBBE5618C348AF00DB901E /* CareTakerPatientSpecViewController.m */,
 			);
 			path = CareTasker;
 			sourceTree = "<group>";
@@ -305,7 +315,9 @@
 				00D36E3818C2DEF500B4DF55 /* ViewController.m in Sources */,
 				00D36E4318C2DF1B00B4DF55 /* Patient.m in Sources */,
 				00980A9718C2D40E0080D3F2 /* AppDelegate.m in Sources */,
+				00FBBE5718C348AF00DB901E /* CareTakerPatientSpecViewController.m in Sources */,
 				00D36E4418C2DF1B00B4DF55 /* Task.m in Sources */,
+				00FBBE5418C33E4900DB901E /* TaskAdderViewController.m in Sources */,
 				00980A9318C2D40E0080D3F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Jeffrey/Documents/Code/CareTasker,
@@ -444,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Jeffrey/Documents/Code/CareTasker,

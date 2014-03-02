@@ -59,11 +59,15 @@
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
     }];
     
+    [self addUser:@"jdoe" :@"John" :@"Doe" :@"jdoe@gmail.com" :@"Caretaker" :@"qwerty"];
+    [self addUser:@"fsho" :@"Fenix" :@"Sho" :@"fsho@gmail.com" :@"Patient" :@"wasd"];
+    [self addToGroup:@"jdoe" :@"fsho" :@"Patient"];
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resignOnTap:)];
     [singleTap setNumberOfTapsRequired:1];
     [singleTap setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:singleTap];
-    [singleTap release];
+    //[singleTap release];
 }
 
 // text field stuff
@@ -116,6 +120,8 @@
     NSString *newString = [@"https://caretasker.firebaseio.com/users/" stringByAppendingString:userid];
     Firebase* userRef = [[Firebase alloc] initWithUrl:newString];
     [userRef setValue:@{@"fname": firstName, @"lname": lastName, @"email": email, @"type": type, @"pass": npassword}];
+    if ([type isEqualToString: @"Caretaker"])
+        [self createGroup:userid];
 }
 
 // Function to login an existing user
@@ -138,6 +144,27 @@
     else {
         // Popup dialog saying that username could not be found
     }
+}
+
+- (void)addToGroup:(NSString*) caretakerID :(NSString*) patientID :(NSString*) type {
+    if ([type isEqualToString:@"Patient"]) {
+        NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:caretakerID];
+        NSString *newString2 = [newString stringByAppendingString:@"/Patients/"];
+        NSString *newString3 = [newString2 stringByAppendingString:patientID];
+        Firebase* groupRef = [[Firebase alloc] initWithUrl:newString3];
+        [groupRef setValue:@{@"patientID": patientID}];
+    }
+    else {
+        // This person is not a patient!!!
+    }
+}
+
+// Called by addUser if the user is a Caretaker, it creates a Caretaker's group
+- (void)createGroup:(NSString*) userid {
+    NSString *newString = [@"https://caretasker.firebaseio.com/groups/group_" stringByAppendingString:userid];
+    NSString *newString2 = [newString stringByAppendingString:@"/Caretaker/"];
+    Firebase* groupRef = [[Firebase alloc] initWithUrl:newString2];
+    [groupRef setValue:@{@"caretakerID": userid}];
 }
 
 - (void)didReceiveMemoryWarning
